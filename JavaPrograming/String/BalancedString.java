@@ -1,32 +1,37 @@
 import java.util.Stack;
-
-public class BalancedString {
-  public static boolean isBalanced(String a){
-    Stack<Character> stk=new Stack<>();
-    for (int i=0;i<a.length();i++){
+public class BalancedString{
+  public static void main(String[] args){
+    String a=args[0];
+    int n=a.length();
+    Stack<Character> s = new Stack<Character>();
+    for(int i=0;i<a.length();i++){
       char b=a.charAt(i);
       if(b=='[' || b=='{' ||b=='('){
-        stk.push(a.charAt(i));
+        s.push(b);
       }
       else if(b==']' || b=='}' ||b==')'){
-        if(stk.empty()){
-          return false;
+        if(s.empty()){
+          System.out.println("Not Balalenced");
         }
-        char c=stk.pop();
-        if ((b == ')' && c != '(') || (b == '}' && c != '{') || (b == ']' && c != '[')      ){
-          return false;
-        } 
-      }
-    }
-    return true;
-  }
-  public static void main(String[] args) {
-        String expression1 = "((a+b)+(c-d))";
-        String expression2 = "(a{[d]}b)";
-        String expression3 = "(3+45-({4[3-5+3/4]-9)}}])";
+        else{
+          char d=s.pop();
+          if((b==']' && d=='[') ||(b=='}' && d=='{') ||(b==')' && d=='(')){
+          continue;
+          }
+          else{
+            System.out.println("Not Balalenced");
+            break;
+          }
 
-        System.out.println(isBalanced(expression1)); // true
-        System.out.println(isBalanced(expression2)); // true
-        System.out.println(isBalanced(expression3)); // false
+        }
+      }
+    
     }
+        if(s.empty()){
+          System.out.println("Balanced");
+        }else{
+          System.out.println("Not Balanaced");
+        }
+
+  }
 }
