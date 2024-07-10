@@ -5,10 +5,11 @@ public class AddString{
   int c=Integer.parseInt(a) + Integer.parseInt(b);
     // Integer.toString(i); String.valueOf(i);
     // https://docs.oracle.com/javase%2F8%2Fdocs%2Fapi%2F%2F/javax/xml/bind/DatatypeConverter.html
-  System.out.println(c);
-  System.out.println(reverseString("Jagadishwar"));
-  System.out.println(countWord("Im good boy"));
-  System.out.println(compTwoString("Jaga","Gaga"));
+    System.out.println(c);
+    System.out.println(reverseString("Jagadishwar"));
+    System.out.println(countWord("Im good boy"));
+    System.out.println(compTwoString("Jaga","Gaga"));
+    System.out.println(reverseWord("Jagadishwar is JeggeBoss"));
 }
   //for reversing String
   public static String reverseString(String name){
@@ -20,6 +21,15 @@ public class AddString{
       b=b+name.charAt(i);
     }
     return(b);
+  }
+
+  public static String reverseWord(String a){
+    StringBuilder b=new StringBuilder();
+    String[] c=a.split(" ");
+    for(int i=c.length-1;i>=0;i--){
+      b= new StringBuilder(b.append(c[i]) + " ");
+    }
+    return(b.toString().trim());
   }
   public static int countWord(String line){
     String[] a=line.split(" ");

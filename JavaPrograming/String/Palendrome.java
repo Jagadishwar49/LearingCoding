@@ -1,15 +1,41 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Palendrome {
-  public static void main(String[] args){
-    String a= args[0];
-    String b="";
-    for(int i =a.length()-1;i>=0;i--){
-      b=b+a.charAt(i);
+  public static void main(String[] args) {
+    Scanner b = new Scanner(System.in);
+    System.out.println("Enter the String");
+    String a = b.nextLine();
+    //ispaliendrome(a);
+    System.out.println(palindrome(a));
+  }
+
+  public static void ispaliendrome(String a) {
+    if (a.length() == 0) {
+      System.out.println("Not palendrome");
+    } else {
+      for (int i = 0; i < a.length(); i++) {
+        if (a.charAt(i) != a.charAt(a.length() - 1 - i)) {
+          System.out.println("Not palendrome");
+        } else {
+          continue;
+        }
+      }
+      System.out.println("Palendrome");
     }
-    System.out.println("Reverse String is : "+b);
-    if(a.equals(b)){
-      System.out.println("String is palendrome");
-    }else{
-      System.out.println("String is not palendrome");
+
+  }
+
+  public static boolean palindrome(String a){
+    int start=0;
+    int end=a.length()-1;
+    while(start<end){
+      if(a.charAt(start)!=a.charAt(end)){
+        return false;
+      }
+      start++;
+      end--;
     }
+    return true;
   }
 }
