@@ -5,6 +5,7 @@ public class Swap{
     a=b-a;
     b=b-a;
     a=a+b;
-    System.out.println(a + " " + b);
+    System.out.println("Value of a : "a + "and b :" + b+ "after swap");
+
   }
 }
