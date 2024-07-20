@@ -11,6 +11,9 @@ public class AddString{
     System.out.println(compTwoString("Jaga","Gaga"));
     System.out.println(reverseWord("Jagadishwar is JeggeBoss"));
 }
+
+  //------------------------------------------------------------------------------------------------------------//
+
   //for reversing String
   public static String reverseString(String name){
     String b="";
@@ -23,6 +26,10 @@ public class AddString{
     return(b);
   }
 
+  //------------------------------------------------------------------------------------------------------------//
+
+  // Example : Good morning jagadishwar
+  // output : jagadishwar morning Good
   public static String reverseWord(String a){
     StringBuilder b=new StringBuilder();
     String[] c=a.split(" ");
@@ -31,10 +38,15 @@ public class AddString{
     }
     return(b.toString().trim());
   }
+
+  //------------------------------------------------------------------------------------------------------------//
+
   public static int countWord(String line){
     String[] a=line.split(" ");
     return(a.length);
   }
+
+  //------------------------------------------------------------------------------------------------------------//
 
   //compare 2 string 
   public static boolean compTwoString(String a,String b){

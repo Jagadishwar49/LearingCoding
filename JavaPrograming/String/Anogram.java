@@ -1,5 +1,15 @@
-import java.util.Arrays;
+/*
+Check whether two Strings are anagram of each other
+Input: str1 = “listen”  str2 = “silent”
+Output: “Anagram”
+Explanation: All characters of “listen” and “silent” are the same.
 
+Input: str1 = “gram”  str2 = “arm”
+Output: “Not Anagram”
+ */
+
+
+import java.util.Arrays;
 public class Anogram{
   //Using Arrays
   public static boolean anogramString(String a,String b){

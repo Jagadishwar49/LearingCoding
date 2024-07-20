@@ -1,9 +1,10 @@
 import java.util.Stack;
 public class BalancedString{
   public static void main(String[] args){
-    String a=args[0];
+    //String a=args[0];
+    String a="[({))]";
     int n=a.length();
-    Stack<Character> s = new Stack<Character>();
+    Stack<Character> s = new Stack<>();
     for(int i=0;i<a.length();i++){
       char b=a.charAt(i);
       if(b=='[' || b=='{' ||b=='('){
@@ -15,14 +16,10 @@ public class BalancedString{
         }
         else{
           char d=s.pop();
-          if((b==']' && d=='[') ||(b=='}' && d=='{') ||(b==')' && d=='(')){
-          continue;
-          }
-          else{
+          if((b==']' && d!='[') ||(b=='}' && d!='{') ||(b==')' && d!='(')){
             System.out.println("Not Balalenced");
             break;
           }
-
         }
       }
     
@@ -32,6 +29,5 @@ public class BalancedString{
         }else{
           System.out.println("Not Balanaced");
         }
-
   }
 }

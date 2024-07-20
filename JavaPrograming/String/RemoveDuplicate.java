@@ -1,8 +1,9 @@
 import java.util.*;
 public class RemoveDuplicate{
   public static void main(String[] args){
-    String a=args[0];
-    StringBuilder str=new StringBuilder();
+    String a="jagadishwar";
+    //StringBuilder str=new StringBuilder();
+    String str="";
     char[] b=a.toCharArray();
     Set<Character> set=new LinkedHashSet<>();
 
@@ -10,8 +11,8 @@ public class RemoveDuplicate{
       set.add(ch);
     }
     for(char ch : set){
-      str.append(ch);
+      str=str + ch;
     }
-    System.out.println(str.toString());
+    System.out.println(str);
   }
 }
