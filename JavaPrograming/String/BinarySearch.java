@@ -4,7 +4,7 @@ public class BinarySearch {
         int v=9;
         int m=0;
         int n=a.length;
-        System.out.println(bSearch(a,v,m,n));
+        System.out.println("Results : " + bSearch(a,v,m,n));
     }
     public static String bSearch(int[] a,int v,int m,int n){
         if(m-n==0){
